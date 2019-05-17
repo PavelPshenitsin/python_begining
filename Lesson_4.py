@@ -59,12 +59,8 @@ checker(email, email_pattern)
 
 print('Спасибо! ' + user_dict[0] + ' ' + user_dict[1] + ' ваш электронный адрес: ' + user_dict[2])
 
-
-
 # Задача - 2:
 # Вам дан текст:
-
-
 
 some_str = '''
 Мороз и солнце; день чудесный!
