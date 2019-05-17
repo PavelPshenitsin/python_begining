@@ -37,39 +37,30 @@ print(list(i for i in ([random.randint(-100, 100) for i in range(100)]) if i % 3
 # Например:
 # Пупкин василий - неверно указано имя, te$T@test.net - неверно указан email (спецсимвол, заглавная буква, .net), te_4_st@test.com - верно указан.
 
-
 import re
-
 name = input('Пожалуйста введите имя: ')
 surname = input('Пожалуйста введите фамилию: ')
 email = input('Пожалуйста введите ваш электройнный адрес: ')
 
 email_pattern = '([a-zA-Z_0-9]+@[a-z]+\.(ru|org|com))'
-
-if re.fullmatch(email_pattern, email):
-    print('Адрес принят')
-else:
-    print('В написании электронного адреса допущена ошибка!')
-
 name_surname_pattern = '([A-Z А-Я][а-я a-z]+)'
+user_dict = []
+def checker(some_str, some_pattern):
+    if re.fullmatch(some_pattern, some_str):
+       user_dict.append(some_str)
 
-if re.fullmatch(name_surname_pattern, name):
-    print('Имя принято')
-else:
-    print('Ошибка в написании имени!')
-
-if re.fullmatch(name_surname_pattern, surname):
-    print('Фамилия принята')
-else:
-    print('Ошибка в написании фамилии!')
-print()
+    else:
+        print('Ошибка в '+ some_str)
 
 
+checker(name, name_surname_pattern)
+checker(surname, name_surname_pattern)
+checker(email, email_pattern)
+
+print('Спасибо! ' + user_dict[0] + ' ' + user_dict[1] + ' ваш электронный адрес: ' + user_dict[2])
 
 # Задача - 2:
 # Вам дан текст:
-
-
 
 some_str = '''
 Мороз и солнце; день чудесный!
