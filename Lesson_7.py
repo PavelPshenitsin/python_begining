@@ -139,5 +139,9 @@ for number in numbers:
         print('\nВы проиграли')
         sys.exit()
     if COUNT_NUMBERS == 0:
-        print('\nБочёнки закончились! Игра окончена!')
+        print('Бочонки закончились. Результат:\n'
+              'у компьютера осталось {} чисел,\n'
+              'у вас осталось {} чисел.'
+              .format(PC, PLAYER))
+
         sys.exit()
